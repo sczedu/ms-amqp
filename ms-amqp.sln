@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ms-amqp.Core", "ms-amqp\ms-amqp.Core.csproj", "{B63DDAA3-E57B-492B-BD90-F2812D56DB63}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{21D2EB01-2B81-4D36-9D48-FC277BC54977}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ms-amqp.Infrastructure", "ms-amqp.Infrastructure\ms-amqp.Infrastructure.csproj", "{B0B5F740-B3C2-44C4-9737-CB9F3070E3CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C13A79B0-E481-40D1-B5DB-BD695666F5CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ms-amqp.Tests", "ms-amqp.Tests\ms-amqp.Tests.csproj", "{E848DAFC-3971-4738-B5A7-0040D1A69652}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B63DDAA3-E57B-492B-BD90-F2812D56DB63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B63DDAA3-E57B-492B-BD90-F2812D56DB63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B63DDAA3-E57B-492B-BD90-F2812D56DB63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B63DDAA3-E57B-492B-BD90-F2812D56DB63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0B5F740-B3C2-44C4-9737-CB9F3070E3CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0B5F740-B3C2-44C4-9737-CB9F3070E3CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0B5F740-B3C2-44C4-9737-CB9F3070E3CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0B5F740-B3C2-44C4-9737-CB9F3070E3CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E848DAFC-3971-4738-B5A7-0040D1A69652}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E848DAFC-3971-4738-B5A7-0040D1A69652}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E848DAFC-3971-4738-B5A7-0040D1A69652}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E848DAFC-3971-4738-B5A7-0040D1A69652}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B63DDAA3-E57B-492B-BD90-F2812D56DB63} = {21D2EB01-2B81-4D36-9D48-FC277BC54977}
+		{B0B5F740-B3C2-44C4-9737-CB9F3070E3CF} = {21D2EB01-2B81-4D36-9D48-FC277BC54977}
+		{E848DAFC-3971-4738-B5A7-0040D1A69652} = {C13A79B0-E481-40D1-B5DB-BD695666F5CD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7059B11-BA50-40F9-8859-1DA00CAF6E93}
+	EndGlobalSection
+EndGlobal
