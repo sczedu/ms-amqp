@@ -1,0 +1,55 @@
+version: '3.4'
+
+services:
+  ms-amqp.core.sender01:
+    image: ${DOCKER_REGISTRY-}msamqpcore
+    build:
+      context: .
+      dockerfile: ms-amqp/Dockerfile
+    environment:
+      - serviceName=SenderService01
+      - applicationType=sender
+      - queueName=MessageQueue
+      - rabbitmqHostname=191.32.12.189
+      - rabbitmqUserName=admin
+      - rabbitmqPassword=admin
+  ms-amqp.core.sender02:
+    image: ${DOCKER_REGISTRY-}msamqpcore
+    build:
+      context: .
+      dockerfile: ms-amqp/Dockerfile
+    environment:
+      - serviceName=SenderService02
+      - applicationType=sender
+      - queueName=MessageQueue
+      - rabbitmqHostname=191.32.12.189
+      - rabbitmqUserName=admin
+      - rabbitmqPassword=admin
+  ms-amqp.core.receiver01:
+    image: ${DOCKER_REGISTRY-}msamqpcore
+    build:
+      context: .
+      dockerfile: ms-amqp/Dockerfile
+    environment:
+      - serviceName=ReceiverService01
+      - applicationType=receiver
+      - queueName=MessageQueue
+      - rabbitmqHostname=191.32.12.189
+      - rabbitmqUserName=admin
+      - rabbitmqPassword=admin
+  ms-amqp.core.receiver02:
+    image: ${DOCKER_REGISTRY-}msamqpcore
+    build:
+      context: .
+      dockerfile: ms-amqp/Dockerfile
+    environment:
+      - serviceName=ReceiverService02
+      - applicationType=receiver
+      - queueName=MessageQueue
+      - rabbitmqHostname=191.32.12.189
+      - rabbitmqUserName=admin
+      - rabbitmqPassword=admin
+networks:
+    proxy_public:
+        external: true
+     
