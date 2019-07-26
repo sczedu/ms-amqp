@@ -40,7 +40,14 @@ namespace ms_amqp.Services
 
         public void SenderStartup()
         {
-            while(true)
+            var isRunning = true;
+            while (isRunning)
+                isRunning = MenageMessage();
+        }
+
+        public bool MenageMessage()
+        {
+            try
             {
                 var message = new Message()
                 {
@@ -52,6 +59,12 @@ namespace ms_amqp.Services
                 var messageJson = JsonConvert.SerializeObject(message);
                 _domainRabbitMQ.SendMessage(queue, messageJson);
                 Thread.Sleep(5000);
+                return true;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
             }
         }
     }

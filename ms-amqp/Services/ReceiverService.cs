@@ -42,15 +42,27 @@ namespace ms_amqp.Services
 
         public void ReceiverStartup()
         {
-            while (true)
+            var isRunning = true;
+            while (isRunning)
+                isRunning = MenageMessage();
+        }
+        public bool MenageMessage()
+        {
+            try
             {
-                var messageReceivedSerialized =_domainRabbitMQ.ReceiveMessage(queue);
-                if(!string.IsNullOrEmpty(messageReceivedSerialized))
-                { 
+                var messageReceivedSerialized = _domainRabbitMQ.ReceiveMessage(queue);
+                if (!string.IsNullOrEmpty(messageReceivedSerialized))
+                {
                     var messageReceived = JsonConvert.DeserializeObject<Message>(messageReceivedSerialized);
                     Console.WriteLine($"ReceiverServiceName:{senderName} | ServiceSenderId:{messageReceived.senderId} | MessageTimestamp:{messageReceived.timeStamp} | Message:{messageReceived.message} | MessageGUID:{messageReceived.guid}");
                 }
                 Thread.Sleep(100);
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
             }
         }
     }
